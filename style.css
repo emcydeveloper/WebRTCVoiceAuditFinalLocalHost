@@ -1,0 +1,24 @@
+#container {
+  background-color: rgb(244, 244, 244);
+}
+
+table {
+  align-items: center;
+
+  margin: 5px;
+  padding: 10px;
+}
+
+th,
+td {
+  border-bottom: 1px solid #ddd;
+  width: max-content;
+  padding: 25px;
+  text-align: center;
+}
+
+
+p {
+  word-break: break-all;
+  white-space: normal;
+}

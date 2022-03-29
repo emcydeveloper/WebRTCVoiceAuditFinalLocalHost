@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="description" content="WebRTC code samples">
+        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+        <meta itemprop="description" content="Client-side WebRTC code samples">
+        <meta itemprop="image" content="../../../images/webrtc-icon-192x192.png">
+        <meta itemprop="name" content="WebRTC code samples">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta id="theme-color" name="theme-color" content="#ffffff">
+
+        <base target="_blank">
+
+        <title>Peer connection: audio only</title>
+
+
+        <link rel="stylesheet" href="style.css" />
+
+    </head>
+</head>
+
+<body>
+
+    <div id="container">
+
+
+
+        <div id="audio">
+            <div>
+                <div class="label">Local audio:</div>
+                <audio id="audio1" autoplay controls muted></audio>
+            </div>
+            <div>
+                <div class="label">Remote audio:</div>
+                <audio id="audio2" autoplay controls></audio>
+            </div>
+        </div>
+
+        <div id="buttons">
+            <select id="codec">
+                <!-- Codec values are matched with how they appear in the SDP.
+                For instance, opus matches opus/48000/2 in Chrome, and ISAC/16000
+                matches 16K iSAC (but not 32K iSAC). -->
+                <option value="opus">Opus</option>
+                <option value="ISAC">iSAC 16K</option>
+                <option value="G722">G722</option>
+                <option value="PCMU">PCMU</option>
+                <option value="red">RED</option>
+            </select>
+            <select id="codecPreferences" disabled>
+                <option selected value="">Default</option>
+            </select>
+            <button id="callButton">Call</button>
+            <button id="hangupButton">Hang Up</button>
+        </div>
+
+        <div id="results-cointainer">
+            <div id="tst-call-quality">
+                <div id="data-report" >
+                <h3 id="connection-state"> </h3>
+
+                    <table>
+                        <caption style="padding: 0px;margin: 0px;">Data transfer per second</caption>
+                        
+                        <tbody>
+                            <th>TYPE</th>
+                            <th>Sent By Sender</th>
+                            <th>Recevived By Receiver</th>
+                            <tr>
+                                <td>Bytes</td>
+                                <td id = "bytesSentBySender"></td>
+                                <td id="bytesReceivedByReceiver"></td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Packets</td>
+                                <td id="packetsSentbySender"></td>
+                                <td id = "packetsReceivedByReceiver"></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!-- <h3 id="receiverRoundTripTime">Receiver Round Trip Time</h3> -->
+                    <h3 id="senderRoundTripTime">Sender Round Trip Time</h3>
+                    <p id="pc1AllResults"></p>
+                    
+                    <p id="pc2AllResults"></p>
+                </div>
+                
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
